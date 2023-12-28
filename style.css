@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #e2e2e2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+.header__container { 
+  background-color: white;
+  display: flex;
+  width: 100vw;
+  height: 10vh;
+  justify-content: center;
+}
+
+div.header__content {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30px;
+}
+
+h1.header__title {
+  color: blue;
+  font-weight: 900px;
+  font-size: 30px;
+}
+
+.input__box{
+    padding: 10px;
+    border: 4px solid transparent;
+    border-radius: 4px;
+    background-color: #ebebeb
+
+    ;
+}
+
+.header__input--search{
+    width: 60%;    
+}
+
+.main__container{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    
+    justify-content: space-between;
+
+}
+.form__container{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 50px;
+
+}
+
+h2{
+    
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 30px;
+
+}
+
+.form__input-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    
+}
+
+#input_title{
+    width: 65%;
+    
+}
+.form__input--priority{
+    width: 30%;
+}
+.form__button--add-task{
+    background-color:#3b5bdb;
+    color: white;
+    padding: 15px;
+    font-size: large;
+    font-weight: 700;
+    margin-top: 30px;
+    border-radius: 10px;
+    cursor: cell;
+
+}
+
+.tasks__container{
+    margin-top: 50px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 50px;
+}
+
+  .task__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color:#f1f3f5;
+    padding: 20px;
+    border-radius: 4px;
+  }
+  
+  .task-info__container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .task-type {
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+  
+  .span-urgent {
+    background-color: #e40404;
+  }
+  
+  .span-important {
+    background-color: #f3a703;
+  }
+  
+  .span-normal {
+    background-color: #028302;
+  }
+
+  .task__button--remove-task {
+    padding: 10px;
+    background-image: url("https://cdn-icons-png.flaticon.com/512/17/17152.png");
+    background-size: cover; 
+    border: none;
+    cursor: pointer;
+  }
