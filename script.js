@@ -36,9 +36,9 @@ function createTaskItem(atividade, tipo) {
   newButton.classList.add("task__button--remove-task");
   newSpan.classList.add("task-type");
 
-  if (tipo === "Urgente") {
+  if (tipo === "urgente") {
     newSpan.classList.add("span-urgent");
-  } else if (tipo === "Importante") {
+  } else if (tipo === "importante") {
     newSpan.classList.add("span-important");
   } else {
     newSpan.classList.add("span-normal");
