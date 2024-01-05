@@ -14,31 +14,34 @@ const tasks = [
 
 
 function renderElements(objetos) {
+  console.log(objetos);  // Adiciona um log para verificar se as tarefas estão corretas
+
+  const theList = document.querySelector("ul");
   for (let i = 0; i < objetos.length; i++) {
     const selectedTask = objetos[i];
-    createTaskItem(selectedTask.title, selectedTask.type);
+    createTaskItem(selectedTask);
   }
 }
 
-
-
-function createTaskItem(atividade, tipo) {
-  const theList = document.querySelector("ul");
+function createTaskItem(task) {
+  const theList = document.querySelector(".tasks__list");
   const newLi = document.createElement("li");
   const newDiv = document.createElement("div");
   const newSpan = document.createElement("span");
   const newP = document.createElement("p");
   const newButton = document.createElement("button");
 
-  newP.textContent = atividade;
+  newP.textContent = task.title;
   newLi.classList.add("task__item");
   newDiv.classList.add("task-info__container");
   newButton.classList.add("task__button--remove-task");
   newSpan.classList.add("task-type");
 
-  if (tipo === "urgente") {
+  const lowerCaseType = task.type.toLowerCase(); // Convertendo para minúsculas
+
+  if (lowerCaseType === "urgente") {
     newSpan.classList.add("span-urgent");
-  } else if (tipo === "importante") {
+  } else if (lowerCaseType === "importante") {
     newSpan.classList.add("span-important");
   } else {
     newSpan.classList.add("span-normal");
@@ -64,19 +67,18 @@ function createTaskItem(atividade, tipo) {
   });
 }
 
-
-
 renderElements(tasks);
 
-const addTask = document.querySelector(".form__button--add-task")
+const addTask = document.querySelector(".form__button--add-task");
 
 addTask.addEventListener("click", function(event){
   event.preventDefault();
 
-  const inputTask= document.querySelector("#input_title").value;
-  const inputType= document.querySelector(".form__input--priority").value;
+  const inputTask = document.querySelector("#input_title").value;
+  const inputType = document.querySelector(".form__input--priority").value;
+
   if (inputTask !== "" && inputType !== "") {
-    createTaskItem(inputTask, inputType);
+    createTaskItem({ title: inputTask, type: inputType });
   } else {
     alert("Por favor, preencha todos os campos.");
   }
